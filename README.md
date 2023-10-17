@@ -2,4 +2,4 @@
 
 Make text lowercase. Simple. No ads
 
-![bear](https://github.com/chausme/lowercase.cc/assets/8984203/977183bb-faf3-4635-8272-a839df5c5717)
+![back](https://github.com/chausme/lowercase.cc/assets/8984203/39e6ae09-1269-49f0-868e-ae3584fd0e66)
