@@ -57,9 +57,9 @@
         gtag('config', 'G-ST73W6RNVD');
     </script>
     <body class="d-flex justify-content-center vh-100">
-        <div class="container">
+        <div class="container" style="padding-top: 100px">
             <div class="row">
-                <div class="col-md-8 offset-md-2" style="padding-top: 100px">
+                <div class="col-md-8 offset-md-2 position-relative">
                     <textarea
                         id="content"
                         class="form-control mb-3"
@@ -68,7 +68,13 @@
                         autofocus="autofocus"
                         placeholder="Add your text here..."
                     ></textarea>
+                    <button id="convert-copy" class="btn btn-dark btn-lg me-3">
+                        convert & copy
+                    </button>
                     <button id="convert" class="btn btn-dark btn-lg">convert</button>
+                    <div class="info d-none position-absolute" style="top: -35px; left: 15px">
+                        ✔️Copied
+                    </div>
                 </div>
             </div>
         </div>
@@ -76,6 +82,20 @@
             document.getElementById('convert').addEventListener('click', function () {
                 const textarea = document.getElementById('content');
                 textarea.value = textarea.value.toLowerCase();
+            });
+
+            document.getElementById('convert-copy').addEventListener('click', function () {
+                const textarea = document.getElementById('content');
+                textarea.value = textarea.value.toLowerCase();
+                textarea.select();
+                textarea.setSelectionRange(0, 99999);
+                navigator.clipboard.writeText(textarea.value);
+                document.querySelector('.info').classList.remove('d-none');
+
+                setTimeout(() => {
+                    document.querySelector('.info').classList.add('d-none');
+                    window.getSelection().removeAllRanges();
+                }, 2000);
             });
         </script>
     </body>
