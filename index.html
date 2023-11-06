@@ -95,6 +95,7 @@
                 setTimeout(() => {
                     document.querySelector('.info').classList.add('d-none');
                     window.getSelection().removeAllRanges();
+                    textarea.value = '';
                 }, 2000);
             });
         </script>
